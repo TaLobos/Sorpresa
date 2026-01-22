@@ -1,40 +1,42 @@
 // ===== VARIABLES =====
-const envelope = document.getElementById('envelope');
-const envelopeSection = document.getElementById('envelopeSection');
-const messageSection1 = document.getElementById('messageSection1');
-const messageSection2 = document.getElementById('messageSection2');
-const messageSection3 = document.getElementById('messageSection3');
-const messageSection4 = document.getElementById('messageSection4');
-const messageSection5 = document.getElementById('messageSection5');
-const messageSection6 = document.getElementById('messageSection6');
-const successMessage = document.getElementById('successMessage');
-const rejectMessage = document.getElementById('rejectMessage');
-const btnContinue1 = document.getElementById('btnContinue1');
-const btnConfetti1 = document.getElementById('btnConfetti1');
-const btnContinue3 = document.getElementById('btnContinue3');
-const btnContinue4 = document.getElementById('btnContinue4');
-const btnContinue5 = document.getElementById('btnContinue5');
-const btnContinue6 = document.getElementById('btnContinue6');
-const btnYes = document.getElementById('btnYes');
-const btnNo = document.getElementById('btnNo');
-const btnRestart = document.getElementById('btnRestart');
-const btnRestartNo = document.getElementById('btnRestartNo');
-const heartButton = document.getElementById('heartButton');
+const elements = {
+    envelope: document.getElementById('envelope'),
+    envelopeSection: document.getElementById('envelopeSection'),
+    messageSection1: document.getElementById('messageSection1'),
+    messageSection2: document.getElementById('messageSection2'),
+    messageSection3: document.getElementById('messageSection3'),
+    messageSection4: document.getElementById('messageSection4'),
+    messageSection5: document.getElementById('messageSection5'),
+    messageSection6: document.getElementById('messageSection6'),
+    messageSection7: document.getElementById('messageSection7'),
+    successMessage: document.getElementById('successMessage'),
+    rejectMessage: document.getElementById('rejectMessage'),
+    btnContinue1: document.getElementById('btnContinue1'),
+    btnConfetti1: document.getElementById('btnConfetti1'),
+    btnContinue3: document.getElementById('btnContinue3'),
+    btnContinue4: document.getElementById('btnContinue4'),
+    btnContinue5: document.getElementById('btnContinue5'),
+    btnContinue6: document.getElementById('btnContinue6'),
+    btnContinue7: document.getElementById('btnContinue7'),
+    btnYes: document.getElementById('btnYes'),
+    btnNo: document.getElementById('btnNo'),
+    btnRestart: document.getElementById('btnRestart'),
+    btnRestartNo: document.getElementById('btnRestartNo'),
+    heartButton: document.getElementById('heartButton')
+};
+
+// ===== FUNCIÓN: CAMBIAR SECCIÓN =====
+function switchSection(hideElements, showElement, delay = 0) {
+    setTimeout(() => {
+        hideElements.forEach(el => el.style.display = 'none');
+        showElement.style.display = 'block';
+    }, delay);
+}
 
 // ===== FUNCIÓN: ALEATORIZAR DELAYS DE LAS FOTOS =====
 function randomizePhotoDelays() {
-    const photos = document.querySelectorAll('.photo');
-    photos.forEach((photo, index) => {
-        let randomDelay;
-        
-        if (index < 3) {
-            // Primeras 3 fotos: delay aleatorio entre 0 y 1 segundo
-            randomDelay = Math.random() * 1;
-        } else {
-            // Últimas 2 fotos: delay aleatorio entre 4 y 6 segundos
-            randomDelay = 4 + Math.random() * 2;
-        }
-        
+    document.querySelectorAll('.photo').forEach((photo, index) => {
+        const randomDelay = index < 3 ? Math.random() : 4 + Math.random() * 2;
         photo.style.animationDelay = randomDelay + 's';
     });
 }
@@ -43,84 +45,54 @@ function randomizePhotoDelays() {
 document.addEventListener('DOMContentLoaded', randomizePhotoDelays);
 
 // ===== EVENTO: ABRIR SOBRE =====
-envelope.addEventListener('click', function() {
-    // Añadir clase para abrir
-    envelope.classList.add('open');
-    
-    // Mostrar primer mensaje después de la animación
-    setTimeout(() => {
-        envelopeSection.style.display = 'none';
-        messageSection1.style.display = 'block';
-    }, 800);
+elements.envelope.addEventListener('click', function() {
+    elements.envelope.classList.add('open');
+    switchSection([elements.envelopeSection], elements.messageSection1, 800);
 });
 
 // ===== EVENTO: CORAZÓN (Abrir sobre) =====
-heartButton.addEventListener('click', function(e) {
+elements.heartButton.addEventListener('click', function(e) {
     e.stopPropagation();
-    envelope.click();
+    elements.envelope.click();
 });
 
-// ===== EVENTO: MÁS CONFETI (Primer Mensaje) =====
-btnConfetti1.addEventListener('click', function() {
-    extraConfetti();
-});
+// ===== EVENTO: MÁS CONFETI =====
+elements.btnConfetti1.addEventListener('click', extraConfetti);
 
-// ===== EVENTO: BOTÓN CONTINUAR (Primer Mensaje) =====
-btnContinue1.addEventListener('click', function() {
-    messageSection1.style.display = 'none';
-    messageSection3.style.display = 'block';
-});
-
-// ===== EVENTO: BOTÓN CONTINUAR (Mensaje 3) =====
-btnContinue3.addEventListener('click', function() {
-    messageSection3.style.display = 'none';
-    messageSection4.style.display = 'block';
-});
-
-// ===== EVENTO: BOTÓN CONTINUAR (Mensaje 4) =====
-btnContinue4.addEventListener('click', function() {
-    messageSection4.style.display = 'none';
-    messageSection5.style.display = 'block';
-});
-
-// ===== EVENTO: BOTÓN CONTINUAR (Mensaje 5) =====
-btnContinue5.addEventListener('click', function() {
-    messageSection5.style.display = 'none';
-    messageSection6.style.display = 'block';
-});
-
-// ===== EVENTO: BOTÓN CONTINUAR (Mensaje 6) =====
-btnContinue6.addEventListener('click', function() {
-    messageSection6.style.display = 'none';
-    messageSection2.style.display = 'block';
-});
+// ===== EVENTOS: BOTONES CONTINUAR =====
+elements.btnContinue1.addEventListener('click', () => 
+    switchSection([elements.messageSection1], elements.messageSection3)
+);
+elements.btnContinue3.addEventListener('click', () => 
+    switchSection([elements.messageSection3], elements.messageSection4)
+);
+elements.btnContinue4.addEventListener('click', () => 
+    switchSection([elements.messageSection4], elements.messageSection5)
+);
+elements.btnContinue5.addEventListener('click', () => 
+    switchSection([elements.messageSection5], elements.messageSection6)
+);
+elements.btnContinue6.addEventListener('click', () => 
+    switchSection([elements.messageSection6], elements.messageSection7)
+);
+elements.btnContinue7.addEventListener('click', () => 
+    switchSection([elements.messageSection7], elements.messageSection2)
+);
 
 // ===== EVENTO: BOTÓN SÍ =====
-btnYes.addEventListener('click', function() {
-    messageSection2.style.display = 'none';
-    successMessage.style.display = 'block';
-    
-    // Lanzar confeti
+elements.btnYes.addEventListener('click', function() {
+    switchSection([elements.messageSection2], elements.successMessage);
     launchConfetti();
 });
 
 // ===== EVENTO: BOTÓN NO =====
-btnNo.addEventListener('click', function() {
-    messageSection2.style.display = 'none';
-    rejectMessage.style.display = 'block';
-});
+elements.btnNo.addEventListener('click', () => 
+    switchSection([elements.messageSection2], elements.rejectMessage)
+);
 
-// ===== EVENTO: BOTÓN REINICIAR =====
-btnRestart.addEventListener('click', function() {
-    // Reiniciar página
-    location.reload();
-});
-
-// ===== EVENTO: BOTÓN REINICIAR (NO) =====
-btnRestartNo.addEventListener('click', function() {
-    // Reiniciar página
-    location.reload();
-});
+// ===== EVENTOS: REINICIAR =====
+elements.btnRestart.addEventListener('click', () => location.reload());
+elements.btnRestartNo.addEventListener('click', () => location.reload());
 
 // ===== FUNCIÓN: LANZAR CONFETI =====
 function launchConfetti() {

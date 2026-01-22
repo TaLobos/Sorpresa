@@ -126,20 +126,6 @@ body {
     animation: slideDown 0.8s ease-out;
 }
 
-/* ===== SECCIÓN DEL SOBRE ===== */
-.envelope-section {
-    text-align: center;
-    animation: fadeIn 0.8s ease-in;
-}
-
-.title {
-    font-size: 2.5rem;
-    color: white;
-    margin-bottom: 3rem;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-    animation: slideDown 0.8s ease-out;
-}
-
 /* Sobre - Diseño realista mejorado */
 .envelope {
     width: 450px;
@@ -222,6 +208,7 @@ body {
     animation: heartPulse 2.2s ease-in-out infinite;
     position: relative;
     z-index: 5;
+    pointer-events: auto;
     text-shadow: 
         0 4px 10px rgba(255, 20, 147, 0.35),
         0 2px 4px rgba(0, 0, 0, 0.1);
@@ -251,25 +238,6 @@ body {
     color: rgba(255, 255, 255, 0.8);
     font-size: 1rem;
     animation: pulse 2s ease-in-out infinite;
-}
-
-/* Animación del corazón mejorada */
-@keyframes heartPulse {
-    0%, 100% {
-        transform: scale(1);
-    }
-    20% {
-        transform: scale(1.12);
-    }
-    40% {
-        transform: scale(1);
-    }
-    60% {
-        transform: scale(1.08);
-    }
-    80% {
-        transform: scale(1);
-    }
 }
 
 /* Animación del corazón */
@@ -486,43 +454,264 @@ canvas {
     pointer-events: none;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-    .title {
-        font-size: 1.8rem;
+/* Responsive - Tablets y pantallas grandes */
+@media (max-width: 1024px) {
+    .photo {
+        width: 120px;
+        height: 120px;
     }
 
     .envelope {
-        width: 360px;
-        height: 250px;
+        width: 400px;
+        height: 280px;
+    }
+
+    .title {
+        font-size: 2rem;
     }
 
     .heart {
-        font-size: 5.5rem;
-    }
-
-    .envelope-top-flap {
-        border-left: 180px solid transparent !important;
-        border-right: 180px solid transparent !important;
-        border-bottom: 112px solid #e8d5c0 !important;
-        top: -8px !important;
-    }
-
-    .envelope-top-flap::before,
-    .envelope-top-flap::after {
-        height: 160px !important;
+        font-size: 6rem;
     }
 
     .message-card {
-        padding: 2rem 1.5rem;
+        padding: 2.5rem 1.8rem;
+        max-width: 90%;
     }
 
     .message-text {
-        font-size: 1.5rem;
+        font-size: 1.8rem;
+    }
+}
+
+/* Responsive - Dispositivos móviles medianos (600px - 768px) */
+@media (max-width: 768px) {
+    .title {
+        font-size: 1.6rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .envelope {
+        width: 320px;
+        height: 220px;
+        margin: 0 auto 1rem;
+    }
+
+    .heart {
+        font-size: 4.5rem;
+    }
+
+    .message-card {
+        padding: 1.8rem 1.2rem;
+        max-width: 85%;
+        margin: 0 auto;
+        border-radius: 15px;
+    }
+
+    .message-text {
+        font-size: 1.3rem;
+        margin-bottom: 1.5rem;
     }
 
     .btn {
-        padding: 0.6rem 1.5rem;
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+        border-radius: 40px;
+    }
+
+    .button-container {
+        gap: 1rem;
+    }
+
+    .success-message h2 {
+        font-size: 1.8rem;
+    }
+
+    .success-message p {
+        font-size: 1.3rem;
+    }
+
+    .hint {
+        font-size: 0.85rem;
+    }
+
+    .photo {
+        width: 100px;
+        height: 100px;
+        border: 3px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .container {
+        padding: 1rem;
+    }
+
+    .envelope-section {
+        width: 100%;
+    }
+}
+
+/* Responsive - Teléfonos pequeños (max 576px) */
+@media (max-width: 576px) {
+    body {
+        overflow-y: auto;
+    }
+
+    .container {
+        min-height: 100vh;
+        padding: 1rem 0.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .title {
+        font-size: 1.3rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    .envelope {
+        width: 280px;
+        height: 190px;
+        margin: 0 auto 0.8rem;
+        filter: drop-shadow(0 15px 30px rgba(0, 0, 0, 0.3));
+    }
+
+    .heart {
+        font-size: 3.5rem;
+    }
+
+    .envelope-front {
+        border-radius: 12px;
+    }
+
+    .message-section {
+        width: 100%;
+        padding: 0 0.5rem;
+    }
+
+    .message-card {
+        padding: 1.5rem 1rem;
+        max-width: 95%;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    }
+
+    .message-text {
+        font-size: 1.1rem;
+        margin-bottom: 1.2rem;
+        line-height: 1.4;
+    }
+
+    .button-container {
+        gap: 0.8rem;
+        flex-wrap: wrap;
+    }
+
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+        border-radius: 30px;
+        margin: 0.3rem;
+    }
+
+    .btn-yes, .btn-no, .btn-continue, .btn-restart {
+        min-width: 100px;
+    }
+
+    .success-message h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .success-message p {
         font-size: 1rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .hint {
+        font-size: 0.75rem;
+        margin-top: 0.8rem;
+    }
+
+    .photo {
+        width: 80px;
+        height: 80px;
+        border: 2px solid rgba(255, 255, 255, 0.5);
+    }
+
+    .photo-1, .photo-2, .photo-3, .photo-4, .photo-5 {
+        animation-duration: 12s;
+    }
+
+    @keyframes float-photo {
+        0% {
+            left: -80px;
+            transform: rotate(0deg) scale(1) translateY(0px);
+        }
+        15% {
+            transform: rotate(8deg) scale(1.05) translateY(-20px);
+        }
+        30% {
+            transform: rotate(-6deg) scale(0.98) translateY(15px);
+        }
+        50% {
+            transform: rotate(5deg) scale(1.02) translateY(-10px);
+        }
+        70% {
+            transform: rotate(-8deg) scale(1.03) translateY(20px);
+        }
+        85% {
+            transform: rotate(6deg) scale(1) translateY(-8px);
+        }
+        100% {
+            left: 100vw;
+            transform: rotate(-5deg) scale(0.95) translateY(0px);
+        }
+    }
+}
+
+/* Responsive - Teléfonos muy pequeños (max 420px) */
+@media (max-width: 420px) {
+    .title {
+        font-size: 1.1rem;
+        margin-bottom: 0.8rem;
+    }
+
+    .envelope {
+        width: 250px;
+        height: 170px;
+    }
+
+    .heart {
+        font-size: 3rem;
+    }
+
+    .message-card {
+        padding: 1.2rem 0.8rem;
+    }
+
+    .message-text {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.75rem;
+    }
+
+    .success-message h2 {
+        font-size: 1.2rem;
+    }
+
+    .success-message p {
+        font-size: 0.9rem;
+    }
+
+    .photo {
+        width: 70px;
+        height: 70px;
     }
 }
