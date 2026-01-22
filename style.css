@@ -29,7 +29,7 @@ body {
 .photo {
     position: absolute;
     font-size: 3rem;
-    opacity: 0.45;
+    opacity: 0.7;
     filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
     animation: float-photo linear infinite;
     width: 150px;
