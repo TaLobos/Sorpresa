@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>💌 Una Sorpresa Para Ti 💌</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Fotos volando de fondo -->
+        <div class="photos-background">
+            <div class="photo photo-1" style="background-image: url('imagenes/IMG-20251020-WA0004.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="photo photo-2" style="background-image: url('imagenes/foto2.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="photo photo-3" style="background-image: url('imagenes/foto3.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="photo photo-4" style="background-image: url('imagenes/foto4.jpg'); background-size: cover; background-position: center;"></div>
+            <div class="photo photo-5" style="background-image: url('imagenes/foto5.jpg'); background-size: cover; background-position: center;"></div>
+        </div>
+        <!-- Sección del Sobre -->
+        <div class="envelope-section" id="envelopeSection">
+            <h1 class="title">Tengo una sorpresa para ti</h1>
+            <div class="envelope" id="envelope">
+                <!-- Base del sobre -->
+                <div class="envelope-base">
+                    <!-- Frente del sobre -->
+                    <div class="envelope-front">
+                        <div class="heart" id="heartButton">❤️</div>
+                    </div>
+                </div>
+            </div>
+            <p class="hint">Haz click en el corazón</p>
+        </div>
+
+        <!-- Primer Mensaje (oculto inicialmente) -->
+        <div class="message-section" id="messageSection1" style="display: none;">
+            <div class="message-card">
+                <p class="message-text">Primero que nada seniora</p>
+                <p class="message-text">🎉Felicidades por recibirte despues de tanto🎉</p>
+                <button class="btn btn-continue" id="btnConfetti1">🎊</button>
+                <button class="btn btn-continue" id="btnContinue1">Continuar</button>
+            </div>
+        </div>
+
+        <!-- Mensaje 3 (oculto inicialmente) -->
+        <div class="message-section" id="messageSection3" style="display: none;">
+            <div class="message-card">
+                <p class="message-text">Y seguranemte si estas leyendo esto es porque tengo un miedo encima</p>
+                <p class="message-text">Vos segui leyendo esto y no mires al tomi (soy el tomi del pasado)</p>
+                <button class="btn btn-continue" id="btnContinue3">Continuar</button>
+            </div>
+        </div>
+
+        <!-- Mensaje 4 (oculto inicialmente) -->
+        <div class="message-section" id="messageSection4" style="display: none;">
+            <div class="message-card">
+                <p class="message-text"></p>
+                <button class="btn btn-continue" id="btnContinue4">Continuar</button>
+            </div>
+        </div>
+
+        <!-- Mensaje 5 (oculto inicialmente) -->
+        <div class="message-section" id="messageSection5" style="display: none;">
+            <div class="message-card">
+                <p class="message-text"></p>
+                <button class="btn btn-continue" id="btnContinue5">Continuar</button>
+            </div>
+        </div>
+
+        <!-- Mensaje 6 (oculto inicialmente) -->
+        <div class="message-section" id="messageSection6" style="display: none;">
+            <div class="message-card">
+                <p class="message-text"></p>
+                <button class="btn btn-continue" id="btnContinue6">Continuar</button>
+            </div>
+        </div>
+
+        <!-- Segundo Mensaje (oculto inicialmente) -->
+        <div class="message-section" id="messageSection2" style="display: none;">
+            <div class="message-card">
+                <p class="message-text">¿Vamos a ver a Leire como novios? 💕</p>
+                <div class="button-container">
+                    <button class="btn btn-yes" id="btnYes">Sí ❤️</button>
+                    <button class="btn btn-no" id="btnNo">No 💔</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mensaje de éxito (oculto inicialmente) -->
+        <div class="success-message" id="successMessage" style="display: none;">
+            <h2>¡Soy el hombre más feliz del mundo! 🎉</h2>
+            <p>Te quiero mucho señora ❤️</p>
+            <button class="btn btn-restart" id="btnRestart">Empezar de nuevo</button>
+        </div>
+
+        <!-- Mensaje de rechazo (oculto inicialmente) -->
+        <div class="reject-message" id="rejectMessage" style="display: none;">
+            <div class="message-card">
+                <p class="message-text">Decías que me querías en teoría y fan de amaia pal colmo todo mal</p>
+                <button class="btn btn-restart" id="btnRestartNo">Empezar de nuevo</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Confeti -->
+    <canvas id="confetti"></canvas>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.5.1/dist/confetti.browser.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
