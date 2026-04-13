@@ -289,6 +289,22 @@ body {
     z-index: 5;
 }
 
+.burns-photo-wrap {
+    margin-top: 1.2rem;
+    display: flex;
+    justify-content: center;
+}
+
+.burns-photo {
+    width: min(420px, 85vw);
+    max-height: 320px;
+    object-fit: contain;
+    border-radius: 0;
+    box-shadow: none;
+    border: none;
+    background: transparent;
+}
+
 .message-text {
     font-size: 2rem;
     color: #ff69b4;
@@ -562,6 +578,11 @@ canvas {
         border-radius: 15px;
     }
 
+    .burns-photo {
+        width: min(360px, 88vw);
+        max-height: 280px;
+    }
+
     .message-text {
         font-size: 1.3rem;
         margin-bottom: 1.5rem;
@@ -681,6 +702,16 @@ canvas {
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     }
 
+    .burns-photo-wrap {
+        margin-top: 1rem;
+    }
+
+    .burns-photo {
+        width: min(320px, 90vw);
+        max-height: 240px;
+        border-radius: 14px;
+    }
+
     .message-text {
         font-size: 1.2rem;
         margin-bottom: 1.2rem;
@@ -770,6 +801,12 @@ canvas {
 
     .message-card {
         padding: 1.2rem 0.8rem;
+    }
+
+    .burns-photo {
+        width: min(260px, 92vw);
+        max-height: 200px;
+        border-radius: 12px;
     }
 
     .message-text {
