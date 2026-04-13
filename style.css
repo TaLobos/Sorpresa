@@ -104,6 +104,18 @@ body {
     }
 }
 
+@keyframes float-photo-mobile {
+    0% {
+        transform: rotate(-3deg) scale(1) translate(0, 0);
+    }
+    50% {
+        transform: rotate(4deg) scale(1.03) translate(8px, -12px);
+    }
+    100% {
+        transform: rotate(-2deg) scale(0.98) translate(-6px, 8px);
+    }
+}
+
 .container {
     position: relative;
     width: 100%;
@@ -539,16 +551,26 @@ canvas {
         font-size: 0.85rem;
     }
 
-    /* Mantener fotos visibles en móvil, con menor carga */
+    /* Mantener fotos visibles en móvil */
     .photos-background {
-        display: block;
+        display: block !important;
     }
 
     .photo {
         width: 90px;
         height: 90px;
         opacity: 0.65;
-        animation-duration: 22s;
+        animation-name: float-photo-mobile;
+        animation-duration: 6s;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
+    }
+
+    .photo-1 { left: 4vw; top: 8%; animation-delay: 0s; }
+    .photo-2 { left: 68vw; top: 18%; animation-delay: 0.8s; }
+    .photo-3 { left: 10vw; top: 58%; animation-delay: 1.2s; }
+    .photo-4 { left: 70vw; top: 70%; animation-delay: 0.4s; }
+    .photo-5 { left: 40vw; top: 38%; animation-delay: 1.6s; }
     }
 
     .container {
@@ -558,7 +580,7 @@ canvas {
     .envelope-section {
         width: 100%;
     }
-}
+
 
 /* Responsive - Teléfonos pequeños (max 576px) */
 @media (max-width: 576px) {
@@ -652,18 +674,28 @@ canvas {
         animation: none;
     }
 
-    /* Mantener fotos visibles en móviles pequeños, optimizadas */
+    /* Mantener fotos visibles en móviles pequeños */
     .photos-background {
-        display: block;
+        display: block !important;
     }
 
     .photo {
         width: 78px;
         height: 78px;
         opacity: 0.55;
-        animation-duration: 24s;
+        animation-name: float-photo-mobile;
+        animation-duration: 6.5s;
+        animation-timing-function: ease-in-out;
+        animation-direction: alternate;
     }
-}
+
+    .photo-1 { left: 2vw; top: 7%; }
+    .photo-2 { left: 66vw; top: 16%; }
+    .photo-3 { left: 8vw; top: 56%; }
+    .photo-4 { left: 68vw; top: 72%; }
+    .photo-5 { left: 38vw; top: 36%; }
+    }
+
 
 /* Responsive - Teléfonos muy pequeños (max 420px) */
 @media (max-width: 420px) {
@@ -704,7 +736,13 @@ canvas {
     }
 
     .photo {
-        width: 70px;
-        height: 70px;
+        width: 64px;
+        height: 64px;
     }
+
+    .photo-1 { left: 2vw; top: 8%; }
+    .photo-2 { left: 64vw; top: 16%; }
+    .photo-3 { left: 7vw; top: 56%; }
+    .photo-4 { left: 66vw; top: 72%; }
+    .photo-5 { left: 36vw; top: 36%; }
 }
