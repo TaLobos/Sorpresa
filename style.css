@@ -124,10 +124,13 @@ body {
     justify-content: center;
     align-items: center;
     z-index: 10;
+    isolation: isolate;
 }
 
 /* ===== SECCIÓN DEL SOBRE ===== */
 .envelope-section {
+    position: relative;
+    z-index: 20;
     text-align: center;
     animation: fadeIn 0.8s ease-in;
 }
@@ -269,6 +272,8 @@ body {
 
 /* ===== SECCIÓN DEL MENSAJE ===== */
 .message-section {
+    position: relative;
+    z-index: 20;
     text-align: center;
     animation: fadeIn 0.8s ease-in;
 }
@@ -296,6 +301,36 @@ body {
     gap: 1.5rem;
     justify-content: center;
     flex-wrap: wrap;
+}
+
+.write-fields {
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    margin: 0 0 1.4rem;
+}
+
+.write-input {
+    width: 100%;
+    padding: 0.75rem 0.95rem;
+    border: 2px solid #e7dff7;
+    border-radius: 12px;
+    font-size: 0.95rem;
+    color: #333;
+    background: #fff;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.write-input:focus {
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.2);
+}
+
+.write-textarea {
+    resize: vertical;
+    min-height: 88px;
+    font-family: inherit;
 }
 
 .btn {
@@ -359,6 +394,8 @@ body {
 
 /* ===== SECCIÓN DE ÉXITO ===== */
 .success-message {
+    position: relative;
+    z-index: 20;
     text-align: center;
     animation: fadeIn 0.8s ease-in;
 }
@@ -380,6 +417,8 @@ body {
 
 /* ===== SECCIÓN DE RECHAZO ===== */
 .reject-message {
+    position: relative;
+    z-index: 20;
     text-align: center;
     animation: fadeIn 0.8s ease-in;
 }
@@ -534,6 +573,11 @@ canvas {
         border-radius: 40px;
     }
 
+    .write-input {
+        font-size: 0.9rem;
+        padding: 0.7rem 0.85rem;
+    }
+
     .button-container {
         gap: 1rem;
     }
@@ -557,8 +601,8 @@ canvas {
     }
 
     .photo {
-        width: clamp(86px, 23vw, 106px);
-        height: clamp(86px, 23vw, 106px);
+        width: clamp(104px, 28vw, 132px);
+        height: clamp(104px, 28vw, 132px);
         opacity: 0.65;
         animation-name: float-photo-mobile;
         animation-duration: 6s;
@@ -567,9 +611,9 @@ canvas {
     }
 
     .photo-1 { left: 4vw; top: 8%; animation-delay: 0s; }
-    .photo-2 { left: 68vw; top: 18%; animation-delay: 0.8s; }
+    .photo-2 { left: 64vw; top: 18%; animation-delay: 0.8s; }
     .photo-3 { left: 10vw; top: 58%; animation-delay: 1.2s; }
-    .photo-4 { left: 70vw; top: 70%; animation-delay: 0.4s; }
+    .photo-4 { left: 63vw; top: 70%; animation-delay: 0.4s; }
     .photo-5 { left: 40vw; top: 38%; animation-delay: 1.6s; }
 
     .container {
@@ -655,6 +699,16 @@ canvas {
         margin: 0.3rem;
     }
 
+    .write-fields {
+        margin-bottom: 1.1rem;
+    }
+
+    .write-input {
+        font-size: 0.88rem;
+        padding: 0.65rem 0.8rem;
+        border-radius: 10px;
+    }
+
     .btn-yes, .btn-no, .btn-continue, .btn-restart {
         min-width: 120px;
     }
@@ -682,8 +736,8 @@ canvas {
     }
 
     .photo {
-        width: clamp(78px, 24vw, 96px);
-        height: clamp(78px, 24vw, 96px);
+        width: clamp(96px, 30vw, 118px);
+        height: clamp(96px, 30vw, 118px);
         opacity: 0.55;
         animation-name: float-photo-mobile;
         animation-duration: 6.5s;
@@ -692,9 +746,9 @@ canvas {
     }
 
     .photo-1 { left: 2vw; top: 7%; }
-    .photo-2 { left: 66vw; top: 16%; }
+    .photo-2 { left: 61vw; top: 16%; }
     .photo-3 { left: 8vw; top: 56%; }
-    .photo-4 { left: 68vw; top: 72%; }
+    .photo-4 { left: 60vw; top: 72%; }
     .photo-5 { left: 38vw; top: 36%; }
 }
 
@@ -728,6 +782,15 @@ canvas {
         font-size: 0.75rem;
     }
 
+    .write-input {
+        font-size: 0.82rem;
+        padding: 0.55rem 0.7rem;
+    }
+
+    .write-textarea {
+        min-height: 72px;
+    }
+
     .success-message h2 {
         font-size: 1.2rem;
     }
@@ -737,13 +800,13 @@ canvas {
     }
 
     .photo {
-        width: clamp(66px, 23vw, 80px);
-        height: clamp(66px, 23vw, 80px);
+        width: clamp(84px, 26vw, 102px);
+        height: clamp(84px, 26vw, 102px);
     }
 
     .photo-1 { left: 2vw; top: 8%; }
-    .photo-2 { left: 64vw; top: 16%; }
+    .photo-2 { left: 58vw; top: 16%; }
     .photo-3 { left: 7vw; top: 56%; }
-    .photo-4 { left: 66vw; top: 72%; }
+    .photo-4 { left: 58vw; top: 72%; }
     .photo-5 { left: 36vw; top: 36%; }
 }

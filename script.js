@@ -9,15 +9,22 @@ const elements = {
     messageSection5: document.getElementById('messageSection5'),
     messageSection6: document.getElementById('messageSection6'),
     messageSection7: document.getElementById('messageSection7'),
+    messageSection8: document.getElementById('messageSection8'),
+    messageSection9: document.getElementById('messageSection9'),
+    messageSection10: document.getElementById('messageSection10'),
+    messageSection11: document.getElementById('messageSection11'),
     successMessage: document.getElementById('successMessage'),
     rejectMessage: document.getElementById('rejectMessage'),
     btnContinue1: document.getElementById('btnContinue1'),
-    btnConfetti1: document.getElementById('btnConfetti1'),
     btnContinue3: document.getElementById('btnContinue3'),
     btnContinue4: document.getElementById('btnContinue4'),
     btnContinue5: document.getElementById('btnContinue5'),
     btnContinue6: document.getElementById('btnContinue6'),
     btnContinue7: document.getElementById('btnContinue7'),
+    btnContinue8: document.getElementById('btnContinue8'),
+    btnContinue9: document.getElementById('btnContinue9'),
+    btnContinue10: document.getElementById('btnContinue10'),
+    btnContinue11: document.getElementById('btnContinue11'),
     btnYes: document.getElementById('btnYes'),
     btnNo: document.getElementById('btnNo'),
     btnRestart: document.getElementById('btnRestart'),
@@ -56,9 +63,6 @@ elements.heartButton.addEventListener('click', function(e) {
     elements.envelope.click();
 });
 
-// ===== EVENTO: MÁS CONFETI =====
-elements.btnConfetti1.addEventListener('click', extraConfetti);
-
 // ===== EVENTOS: BOTONES CONTINUAR =====
 elements.btnContinue1.addEventListener('click', () => 
     switchSection([elements.messageSection1], elements.messageSection3)
@@ -76,7 +80,19 @@ elements.btnContinue6.addEventListener('click', () =>
     switchSection([elements.messageSection6], elements.messageSection7)
 );
 elements.btnContinue7.addEventListener('click', () => 
-    switchSection([elements.messageSection7], elements.messageSection2)
+    switchSection([elements.messageSection7], elements.messageSection8)
+);
+elements.btnContinue8.addEventListener('click', () => 
+    switchSection([elements.messageSection8], elements.messageSection9)
+);
+elements.btnContinue9.addEventListener('click', () => 
+    switchSection([elements.messageSection9], elements.messageSection10)
+);
+elements.btnContinue10.addEventListener('click', () => 
+    switchSection([elements.messageSection10], elements.messageSection11)
+);
+elements.btnContinue11.addEventListener('click', () => 
+    switchSection([elements.messageSection11], elements.messageSection2)
 );
 
 // ===== EVENTO: BOTÓN SÍ =====
@@ -131,22 +147,6 @@ function launchConfetti() {
             duration: 2000,
         });
     }, 400);
-}
-
-// ===== FUNCIÓN: CONFETI EXTRA =====
-function extraConfetti() {
-    // Breve ráfaga adicional para el primer mensaje
-    confetti({
-        particleCount: 120,
-        spread: 100,
-        origin: { y: 0.7 },
-        duration: 1800,
-    });
-
-    setTimeout(() => {
-        confetti({ particleCount: 80, spread: 140, origin: { x: 0.1, y: 0.6 }, angle: 45 });
-        confetti({ particleCount: 80, spread: 140, origin: { x: 0.9, y: 0.6 }, angle: 135 });
-    }, 200);
 }
 
 // ===== FIN DEL SCRIPT =====
