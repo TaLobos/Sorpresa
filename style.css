@@ -557,8 +557,8 @@ canvas {
     }
 
     .photo {
-        width: 90px;
-        height: 90px;
+        width: clamp(86px, 23vw, 106px);
+        height: clamp(86px, 23vw, 106px);
         opacity: 0.65;
         animation-name: float-photo-mobile;
         animation-duration: 6s;
@@ -573,12 +573,15 @@ canvas {
     .photo-5 { left: 40vw; top: 38%; animation-delay: 1.6s; }
 
     .container {
-        padding: 1rem;
+        min-height: 100dvh;
+        height: auto;
+        padding: max(0.8rem, env(safe-area-inset-top)) 1rem max(0.8rem, env(safe-area-inset-bottom));
     }
 
     .envelope-section {
         width: 100%;
     }
+}
 
 
 /* Responsive - Teléfonos pequeños (max 576px) */
@@ -588,7 +591,7 @@ canvas {
     }
 
     .container {
-        min-height: 100vh;
+        min-height: 100dvh;
         padding: 1rem 0.5rem;
         display: flex;
         flex-direction: column;
@@ -679,8 +682,8 @@ canvas {
     }
 
     .photo {
-        width: 78px;
-        height: 78px;
+        width: clamp(78px, 24vw, 96px);
+        height: clamp(78px, 24vw, 96px);
         opacity: 0.55;
         animation-name: float-photo-mobile;
         animation-duration: 6.5s;
@@ -693,8 +696,7 @@ canvas {
     .photo-3 { left: 8vw; top: 56%; }
     .photo-4 { left: 68vw; top: 72%; }
     .photo-5 { left: 38vw; top: 36%; }
-    }
-
+}
 
 /* Responsive - Teléfonos muy pequeños (max 420px) */
 @media (max-width: 420px) {
@@ -735,8 +737,8 @@ canvas {
     }
 
     .photo {
-        width: 64px;
-        height: 64px;
+        width: clamp(66px, 23vw, 80px);
+        height: clamp(66px, 23vw, 80px);
     }
 
     .photo-1 { left: 2vw; top: 8%; }
