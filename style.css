@@ -707,8 +707,8 @@ canvas {
     }
 
     .burns-photo {
-        width: min(240px, 70vw);
-        max-height: 170px;
+        width: min(270px, 78vw);
+        max-height: 200px;
         border-radius: 14px;
     }
 
@@ -804,8 +804,8 @@ canvas {
     }
 
     .burns-photo {
-        width: min(190px, 62vw);
-        max-height: 140px;
+        width: min(230px, 76vw);
+        max-height: 180px;
         border-radius: 12px;
     }
 
