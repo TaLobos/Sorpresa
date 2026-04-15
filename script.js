@@ -1,5 +1,9 @@
 // ===== VARIABLES =====
 const elements = {
+    warningSection: document.getElementById('warningSection'),
+    warningInput: document.getElementById('warningInput'),
+    warningError: document.getElementById('warningError'),
+    btnUnlock: document.getElementById('btnUnlock'),
     envelope: document.getElementById('envelope'),
     envelopeSection: document.getElementById('envelopeSection'),
     messageSection1: document.getElementById('messageSection1'),
@@ -32,6 +36,8 @@ const elements = {
     heartButton: document.getElementById('heartButton')
 };
 
+const unlockWord = 'alberto';
+
 // ===== FUNCIÓN: CAMBIAR SECCIÓN =====
 function switchSection(hideElements, showElement, delay = 0) {
     setTimeout(() => {
@@ -48,8 +54,30 @@ function randomizePhotoDelays() {
     });
 }
 
+function unlockLetter() {
+    const value = elements.warningInput.value.trim().toLowerCase();
+
+    if (value === unlockWord) {
+        elements.warningError.textContent = '';
+        document.body.classList.remove('locked');
+        switchSection([elements.warningSection], elements.envelopeSection);
+        return;
+    }
+
+    elements.warningError.textContent = 'La palabra no coincide. Probá de nuevo.';
+    elements.warningInput.focus();
+    elements.warningInput.select();
+}
+
 // Ejecutar al cargar la página
 document.addEventListener('DOMContentLoaded', randomizePhotoDelays);
+
+elements.btnUnlock.addEventListener('click', unlockLetter);
+elements.warningInput.addEventListener('keydown', (event) => {
+    if (event.key === 'Enter') {
+        unlockLetter();
+    }
+});
 
 // ===== EVENTO: ABRIR SOBRE =====
 elements.envelope.addEventListener('click', function() {

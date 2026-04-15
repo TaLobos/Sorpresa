@@ -14,6 +14,104 @@ body {
     overflow: hidden;
 }
 
+.warning-section {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    padding: 1.5rem;
+}
+
+.warning-card {
+    width: min(680px, 92vw);
+    background: #050505;
+    border: 2px solid #2f2f2f;
+    border-radius: 24px;
+    padding: 2.5rem 1.6rem;
+    text-align: center;
+    color: #fff;
+    box-shadow: 0 20px 70px rgba(0, 0, 0, 0.55);
+}
+
+.warning-icon {
+    font-size: 4rem;
+    line-height: 1;
+    margin-bottom: 1rem;
+}
+
+.warning-title {
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 1.25rem;
+}
+
+.warning-text {
+    font-size: 1.05rem;
+    line-height: 1.6;
+    margin-bottom: 0.85rem;
+    color: #f1f1f1;
+}
+
+.warning-label {
+    display: block;
+    margin: 1.5rem 0 0.7rem;
+    font-weight: bold;
+    color: #fff;
+}
+
+.warning-input {
+    width: 100%;
+    padding: 0.95rem 1rem;
+    border-radius: 14px;
+    border: 2px solid #444;
+    background: #111;
+    color: #fff;
+    font-size: 1.05rem;
+    outline: none;
+    text-align: center;
+}
+
+.warning-input:focus {
+    border-color: #fff;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.12);
+}
+
+.warning-error {
+    min-height: 1.4em;
+    margin-top: 0.75rem;
+    color: #ff8b8b;
+    font-size: 0.95rem;
+}
+
+.btn-warning {
+    margin-top: 1rem;
+    background: #fff;
+    color: #000;
+}
+
+.btn-warning:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+}
+
+.warning-hidden {
+    display: none;
+}
+
+body.locked .photos-background,
+body.locked .envelope-section,
+body.locked .message-section,
+body.locked .success-message,
+body.locked .reject-message,
+body.locked #confetti {
+    visibility: hidden;
+    pointer-events: none;
+}
+
 /* ===== FOTOS DE FONDO ===== */
 .photos-background {
     position: fixed;

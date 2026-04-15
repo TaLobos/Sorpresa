@@ -6,8 +6,22 @@
     <title>NO LO COMPARTAS</title>
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="locked">
     <div class="container">
+        <!-- Pantalla de advertencia inicial -->
+        <div class="warning-section" id="warningSection">
+            <div class="warning-card">
+                <div class="warning-icon" aria-hidden="true">⚠️</div>
+                <h1 class="warning-title">No ver antes de los siguientes requerimientos</h1>
+                <p class="warning-text">tiene que estar el señor presente con usted y a solas  (se aceptan hijos perrunos)</p>
+                <p class="warning-text">la contraseña es el segundo nombre del señor</p>
+                <label class="warning-label" for="warningInput">Escribí la palabra para continuar</label>
+                <input type="text" id="warningInput" class="warning-input" autocomplete="off" autocapitalize="none" spellcheck="false" placeholder="Escribí la palabra">
+                <button class="btn btn-warning" id="btnUnlock">Continuar</button>
+                <p class="warning-error" id="warningError" aria-live="polite"></p>
+            </div>
+        </div>
+
         <!-- Fotos volando de fondo -->
         <div class="photos-background">
             <div class="photo photo-1" style="background-image: url('imagenes/IMG-20251020-WA0004.jpg'); background-size: cover; background-position: center;"></div>
@@ -28,7 +42,7 @@
                     </div>
                 </div>
             </div>
-            <p class="hint">Haz click en el corazón</p>
+            <p class="hint">Haz clic en el corazón</p>
         </div>
 
         <!-- Primer Mensaje (oculto inicialmente) -->
@@ -44,7 +58,7 @@
         <div class="message-section" id="messageSection3" style="display: none;">
             <div class="message-card">
                 <p class="message-text"> seguramente si estás leyendo esto es porque no nos peleamos (por ahora)</p>
-                <p class="message-text">y vos seguí leyendo esto y no mires al tomi que me lo ponés más nervioso</p>
+                <p class="message-text">y vos seguí leyendo esto y no mires al Tomi que me lo ponés más nervioso</p>
                 <button class="btn btn-continue" id="btnContinue3">Continuar</button>
             </div>
         </div>
@@ -69,7 +83,7 @@
         <!-- Mensaje 6 (oculto inicialmente) -->
         <div class="message-section" id="messageSection6" style="display: none;">
             <div class="message-card">
-                <p class="message-text">Tenéle un poco de piedad al tomi que está al lado tuyo</p>
+                <p class="message-text">Tenéle un poco de piedad al Tomi que está al lado tuyo</p>
                 <p class="message-text">Hace mucho que no lo intenta y sí hizo todo esto (y sabés que no le gusta programar)</p>
                 <button class="btn btn-continue" id="btnContinue6">Continuar</button>
             </div>
@@ -126,7 +140,7 @@
         <!-- Segundo Mensaje (oculto inicialmente) -->
         <div class="message-section" id="messageSection2" style="display: none;">
             <div class="message-card">
-                <p class="message-text">¿Queres ser mi novia? 💕</p>
+                <p class="message-text">¿Querés ser mi novia? 💕</p>
                 <div class="button-container">
                     <button class="btn btn-yes" id="btnYes">Sí ❤️</button>
                     <button class="btn btn-no" id="btnNo">No 💔</button>
@@ -140,7 +154,7 @@
          <!-- Mensaje de éxito (oculto inicialmente) -->
         <div class="success-message" id="successMessage" style="display: none;">
             <h2>¡Te quiero mucho señora!❤️</h2>
-            <p>Ahora si te voy a poder gorrear con leire</p>
+            <p>Ahora sí te voy a poder gorrear con Leire</p>
             <button class="btn btn-restart" id="btnRestart">Empezar de nuevo</button>
             <div class="burns-photo-wrap">
                 <img class="burns-photo" src="imagenes/leire.png" alt="Leire">
@@ -150,7 +164,7 @@
         <!-- Mensaje de rechazo (oculto inicialmente) -->
         <div class="reject-message" id="rejectMessage" style="display: none;">
             <div class="message-card">
-                <p class="message-text">la verdad no tenia pensado que elijieras esta opcion pero bueno y pensaba que nada podia malir sal</p>
+                <p class="message-text">la verdad no tenía pensado que eligieras esta opción pero bueno y pensaba que nada podía malir sal</p>
                 <button class="btn btn-restart" id="btnRestartNo">Empezar de nuevo</button>
             </div>
         </div>
