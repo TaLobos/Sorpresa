@@ -12,6 +12,7 @@ const elements = {
     messageSection4: document.getElementById('messageSection4'),
     messageSection5: document.getElementById('messageSection5'),
     messageSection6: document.getElementById('messageSection6'),
+    messageSection6Write: document.getElementById('messageSection6Write'),
     messageSection7: document.getElementById('messageSection7'),
     messageSection8: document.getElementById('messageSection8'),
     messageSection9: document.getElementById('messageSection9'),
@@ -24,6 +25,7 @@ const elements = {
     btnContinue4: document.getElementById('btnContinue4'),
     btnContinue5: document.getElementById('btnContinue5'),
     btnContinue6: document.getElementById('btnContinue6'),
+    btnContinue6Write: document.getElementById('btnContinue6Write'),
     btnContinue7: document.getElementById('btnContinue7'),
     btnContinue8: document.getElementById('btnContinue8'),
     btnContinue9: document.getElementById('btnContinue9'),
@@ -36,7 +38,7 @@ const elements = {
     heartButton: document.getElementById('heartButton')
 };
 
-const unlockWord = 'alberto';
+const unlockWord = 'ochoa';
 
 // ===== FUNCIÓN: CAMBIAR SECCIÓN =====
 function switchSection(hideElements, showElement, delay = 0) {
@@ -105,7 +107,10 @@ elements.btnContinue5.addEventListener('click', () =>
     switchSection([elements.messageSection5], elements.messageSection6)
 );
 elements.btnContinue6.addEventListener('click', () => 
-    switchSection([elements.messageSection6], elements.messageSection7)
+    switchSection([elements.messageSection6], elements.messageSection6Write)
+);
+elements.btnContinue6Write.addEventListener('click', () => 
+    switchSection([elements.messageSection6Write], elements.messageSection7)
 );
 elements.btnContinue7.addEventListener('click', () => 
     switchSection([elements.messageSection7], elements.messageSection8)
